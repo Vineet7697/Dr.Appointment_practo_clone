@@ -1,19 +1,94 @@
-
 {% extends "base.html" %}
 
+{% block title %}Login{% endblock title %}
+
 {% block content %}
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="">
-        <label for=""> Full Name</label>
-        <input type="text" name="" id="">
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-50">
+
+    <!-- Nav Links -->
+    <div class="mb-6 flex gap-8 text-lg">
+        <a href="{% url 'login' %}"
+           class="font-semibold text-[#14BEF0] border-b-2 border-[#14BEF0] pb-1">
+            Login
+        </a>
+
+        <a href="{% url 'register' %}"
+           class="font-semibold text-gray-600 hover:underline ">
+            Register
+        </a>
+    </div>
+
+    <!-- Login Form -->
+    <form class="bg-white p-8 shadow-lg rounded-xl w-96 space-y-6 border border-gray-200">
+
+        <!-- Email / Mobile -->
+        <div>
+            <label for="email" class="block text-sm font-semibold mb-1 text-gray-700">
+                Mobile Number / Email ID
+            </label>
+            <input 
+                type="text"
+                id="email"
+                name="email"
+                class="w-full border border-gray-300 px-4 py-2 rounded text-sm focus:outline-none focus:border-[#14BEF0] focus:ring-1 focus:ring-[#14BEF0]"
+                placeholder="Mobile Number / Email ID"
+                required
+            >
+        </div>
+
+        <!-- Password -->
+        <div>
+            <label for="password" class="block text-sm font-semibold mb-1 text-gray-700">
+                Password
+            </label>
+            <input 
+                type="password"
+                id="password"
+                name="password"
+                class="w-full border border-gray-300 px-4 py-2 rounded text-sm focus:outline-none focus:border-[#14BEF0] focus:ring-1 focus:ring-[#14BEF0]"
+                placeholder="Password"
+                required
+            >
+        </div>
+
+        <!-- Remember + Forgot -->
+        <div class="flex items-center justify-between text-sm">
+            <!-- Remember me -->
+            <label class="inline-flex items-center gap-2 text-gray-700">
+                <input 
+                    type="checkbox"
+                    class="rounded border-gray-300"
+                    name="remember_me"
+                >
+                <span>Remember me for 30 days</span>
+            </label>
+
+            <!-- Forgot password -->
+            <a href="#" class="text-[#14BEF0] hover:underline font-medium">
+                Forgot password?
+            </a>
+        </div>
+
+        <!-- Login with OTP -->
+        <div class="text-sm">
+            <label class="inline-flex items-center gap-2 text-gray-700">
+                <input 
+                    type="checkbox"
+                    class="rounded border-gray-300"
+                    name="login_with_otp"
+                >
+                <span>Login with OTP instead of password</span>
+            </label>
+        </div>
+
+        <!-- Login button -->
+        <button
+            type="submit"
+            class="w-full bg-[#14BEF0] hover:bg-[#12afd8] text-white py-2 rounded font-semibold text-sm transition active:scale-[0.98]"
+        >
+            Login
+        </button>
+
     </form>
-</body>
-</html>
+</div>
 {% endblock content %}

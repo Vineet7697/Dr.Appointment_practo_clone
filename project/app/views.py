@@ -30,3 +30,6 @@ def surgeries(request):
 
 def footer(request):
     return render(request,'footer.html')
+
+def register(req):
+    return render(req,'register.html')

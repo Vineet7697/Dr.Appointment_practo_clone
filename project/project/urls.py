@@ -25,6 +25,7 @@ urlpatterns = [
     path('find_doctor', views.find_doctor, name='find_doctor'),
     path('base/', views.base, name='base'),
     path('login/', views.login, name='login'),
+    path('register/', views.register, name='register'),
     path('video_consult/', views.video_consult, name='video_consult'),
     path('surgeries/', views.surgeries, name='surgeries'),
     path('footer/', views.footer, name='footer'),

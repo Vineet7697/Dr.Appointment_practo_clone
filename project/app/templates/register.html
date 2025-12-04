@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-50">
+
+    <!-- Nav Links -->
+    <div class="mb-6 flex gap-6 text-lg">
+        <a href="{% url 'login' %}"
+            class="font-semibold text-gray-600  hover:underline">
+            Login
+        </a>
+
+        <a href="{% url 'register' %}"
+            class="font-semibold text-[#14BEF0] border-b-2 border-[#14BEF0] pb-1">
+            Register
+        </a>
+    </div>
+
+    <!-- Login Form -->
+    <form class="bg-white p-8 shadow-xl rounded-md w-[420px] space-y-6 border border-gray-200">
+
+         <div class=" flex justify-between items-center">
+            <h2 class="text-xl font-semibold text-gray-700">Join Practo</h2>
+            <p class="text-sm text-gray-500">
+                Are you a Doctor?
+                <a href="#" class="text-[#14BEF0] font-medium hover:underline">
+                    Register Here
+                </a>
+            </p>
+        </div>
+
+        <hr class="border-gray-200 w-full">
+        <!-- Full Name -->
+        <div>
+            <label class="block text-sm font-semibold mb-1 text-gray-600">Full Name</label>
+            <input 
+                type="text" 
+                name="name"
+                class="w-full border  border-gray-300 px-4 py-2 rounded text-sm focus:outline-none focus:border-[#14BEF0]"
+                placeholder="Full Name"
+                required
+            >
+        </div>
+
+        <!-- Mobile Number -->
+        <div>
+            <label class="block text-sm font-semibold mb-1 text-gray-600">Mobile Number</label>
+            
+            <div class="flex gap-3">
+                <select
+                    class="border border-gray-300 px-2 py-2 rounded text-sm focus:outline-none focus:border-[#14BEF0]"
+                    required
+                >
+                    <option value="+91">+91 (IND)</option>
+                    <option value="+966">+966 (SA)</option>
+                    <option value="+1">+1 (USA)</option>
+                    <option value="+62">+62 (IDN)</option>
+                    <option value="+971">+971 (UAE)</option>
+                </select>
+
+                <input 
+                    type="tel"
+                    class="w-full border border-gray-300 px-4 py-2 rounded text-sm focus:outline-none focus:border-[#14BEF0]"
+                    placeholder="Mobile Number"
+                    required
+                >
+            </div>
+        </div>
+
+        <!-- Password -->
+        <div>
+            <label class="block text-sm font-semibold mb-1 text-gray-600">Create Password</label>
+            <input 
+                type="password"
+                class="w-full border border-gray-300 px-4 py-2 rounded text-sm  focus:outline-none  focus:border-[#14BEF0]"
+                placeholder="Password"
+                required
+            >
+        </div>
+        <!-- Checkbox -->
+        <div class="flex items-start gap-2 text-sm leading-5">
+            <input type="checkbox" class="mt-1">
+            <p>Receive relevant offers and promotional communication from Practo.By signing up, I agree to
+            <span class="text-blue-600 font-medium cursor-pointer hover:underline">
+            terms.
+                </span>
+            </p>
+        </div>
+
+        <!-- Send Otp Button -->
+        <button
+            type="submit"
+            class="w-full bg-[#14BEF0]  text-white py-2 rounded font-semibold  cursor-pointer"
+        >
+            Send OTP
+        </button>
+        
+    </form>
+</div>
+{% endblock content %}
