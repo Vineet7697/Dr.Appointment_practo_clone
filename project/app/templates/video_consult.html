@@ -1,15 +1,343 @@
 {% extends "base.html" %}
+{% load static tailwind_tags %}
+
+{% block css %}
+{% tailwind_css %}
+{% endblock css %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>video_consult</h1>
-</body>
-</html>
+
+<section class="min-h-[50vh] flex items-center bg-[#fde4d3] w-full ">
+  <div class="max-w-7xl mx-auto px-6 py-12">
+    <div class="flex flex-col lg:flex-row items-center gap-10">
+
+      <!-- Left: Content -->
+      <div class="w-full lg:w-1/2 flex flex-col justify-center">
+        <div class="max-w-xl">
+          <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight">
+            Skip the travel!
+          </h1>
+
+          <h2 class="mt-2 text-2xl md:text-3xl font-semibold">
+            Take Online Doctor Consultation
+          </h2>
+
+          <p class="mt-4 text-lg md:text-xl">
+            Private consultation + Audio call · Starts at just
+            <span class="font-bold">₹199</span>
+          </p>
+
+          <a href="#" class="inline-block mt-6 bg-blue-600  text-white px-6 py-3 rounded text-lg font-semibold ">Consult
+            Now</a>
+
+          <!-- Features -->
+          <div class="mt-8 flex flex-wrap gap-6 text-lg">
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-award text-yellow-400" aria-hidden="true"></i>
+              <span>Verified Doctors</span>
+            </p>
+
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-file-prescription text-green-400" aria-hidden="true"></i>
+              <span>Digital Prescription</span>
+            </p>
+
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-comments text-blue-400" aria-hidden="true"></i>
+              <span>Free Followup</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Image with overlay (hidden on small screens) -->
+      <div class="w-full lg:w-1/2 h-40 md:h-96 rounded-lg overflow-hidden relative hidden lg:block" aria-hidden="true">
+        <!-- Use <img> for accessibility; mark aria-hidden if decorative -->
+        <img src="{% static 'images/images/homepage-hero.png' %}" alt="Doctor consulting online via phone"
+          class="object-cover w-full h-full" />
+
+        <!-- Overlay for better contrast -->
+        <div class="absolute inset-0  from-black/40 to-transparent pointer-events-none"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-10">
+  <div class="max-w-7xl mx-auto px-4 overflow-hidden">
+
+    <div class="swiper myArticlesSwiper">
+      <div class="swiper-wrapper">
+
+        <!-- CARD 1 -->
+        <div class="swiper-slide flex flex-col justify-center items-center text-center cursor-pointer transition shadow rounded-xl p-4 gap-3 bg-white">
+          <img src="{% static 'images/images/top-speciality-dermatologist.svg' %}"
+               class="w-24 h-24 object-cover rounded-full shadow-md hover:scale-105 transition mx-auto" />
+          <h3 class="text-gray-800 text-sm md:text-lg font-semibold">Dermatology</h3>
+          <p class="text-xs text-gray-400">₹499</p>
+          <a href="#" class="px-4 py-1 rounded-full text-[#14BEF0]">Consult Now</a>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="swiper-slide flex flex-col items-center text-center cursor-pointer transition shadow rounded-xl p-4 gap-3 bg-white">
+          <img src="{% static 'images/images/top-speciality-gp.svg' %}"
+               class="w-24 h-24 object-cover rounded-full shadow-md hover:scale-105 transition mx-auto" />
+          <h3 class="text-gray-800 text-sm md:text-lg font-semibold">General Physician</h3>
+          <p class="text-xs text-gray-400">₹549</p>
+          <a href="#" class="px-4 py-1 rounded-full text-[#14BEF0]">Consult Now</a>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="swiper-slide flex flex-col items-center text-center cursor-pointer transition shadow rounded-xl p-4 gap-3 bg-white">
+          <img src="{% static 'images/images/top-speciality-gynaecologist.svg' %}"
+               class="w-24 h-24 object-cover rounded-full shadow-md hover:scale-105 transition mx-auto" />
+          <h3 class="text-gray-800 text-sm md:text-lg font-semibold">Gynaecology</h3>
+          <p class="text-xs text-gray-400">₹549</p>
+          <a href="#" class="px-4 py-1 rounded-full text-[#14BEF0]">Consult Now</a>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="swiper-slide flex flex-col items-center text-center cursor-pointer transition shadow rounded-xl p-4 gap-3 bg-white">
+          <img src="{% static 'images/images/top-speciality-kidney.svg' %}"
+               class="w-24 h-24 object-cover rounded-full shadow-md hover:scale-105 transition mx-auto" />
+          <h3 class="text-gray-800 text-sm md:text-lg font-semibold">Urology</h3>
+          <p class="text-xs text-gray-400">₹599</p>
+          <a href="#" class="px-4 py-1 rounded-full text-[#14BEF0]">Consult Now</a>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="swiper-slide flex flex-col items-center text-center cursor-pointer transition shadow rounded-xl p-4 gap-3 bg-white">
+          <img src="{% static 'images/images/top-speciality-pediatric.svg' %}"
+               class="w-24 h-24 object-cover rounded-full shadow-md hover:scale-105 transition mx-auto" />
+          <h3 class="text-gray-800 text-sm md:text-lg font-semibold">Pediatrics</h3>
+          <p class="text-xs text-gray-400">₹599</p>
+          <a href="#" class="px-4 py-1 rounded-full text-[#14BEF0]">Consult Now</a>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="swiper-slide flex flex-col items-center text-center cursor-pointer transition shadow rounded-xl p-4 gap-3 bg-white">
+          <img src="{% static 'images/images/top-speciality-stomach.svg' %}"
+               class="w-24 h-24 object-cover rounded-full shadow-md hover:scale-105 transition mx-auto" />
+          <h3 class="text-gray-800 text-sm md:text-lg font-semibold">Stomach & Digestion</h3>
+          <p class="text-xs text-gray-400">₹499</p>
+          <a href="#" class="px-4 py-1 rounded-full text-[#14BEF0]">Consult Now</a>
+        </div>
+
+        <!-- CARD 7 -->
+        <div class="swiper-slide flex flex-col items-center text-center cursor-pointer transition shadow rounded-xl p-4 gap-3 bg-white">
+          <img src="{% static 'images/images/top-speciality-sexology.svg' %}"
+               class="w-24 h-24 object-cover rounded-full shadow-md hover:scale-105 transition mx-auto" />
+          <h3 class="text-gray-800 text-sm md:text-lg font-semibold">Sexology</h3>
+          <p class="text-xs text-gray-400">₹599</p>
+          <a href="#" class="px-4 py-1 rounded-full text-[#14BEF0]">Consult Now</a>
+        </div>
+
+        <!-- CARD 8 -->
+        <div class="swiper-slide flex flex-col items-center text-center cursor-pointer transition shadow rounded-xl p-4 gap-3 bg-white">
+          <img src="{% static 'images/images/top-speciality-psychiatric.svg' %}"
+               class="w-24 h-24 object-cover rounded-full shadow-md hover:scale-105 transition mx-auto" />
+          <h3 class="text-gray-800 text-sm md:text-lg font-semibold">Psychiatry</h3>
+          <p class="text-xs text-gray-400">₹499</p>
+          <a href="#" class="px-4 py-1 rounded-full text-[#14BEF0]">Consult Now</a>
+        </div>
+
+      </div>
+
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+    </div>
+  </div>
+</section>
+
+
+<section >
+  <div class="max-w-7xl mx-auto mt-12 px-8">
+
+    <div class="swiper1 mt-8">
+      <div class="swiper-wrapper">
+
+        <!-- CARD 1 -->
+        <div class="swiper-slide">
+          <div class="bg-white rounded-2xl shadow-md overflow-hidden w-60 mx-auto cursor-pointer hover:shadow-lg transition">
+            <img src="{% static 'images/cough-cold-v1.jpg' %}" class="w-full h-40 object-cover" />
+            <div class="p-4">
+              <h3 class="text-gray-800 text-lg font-semibold">Cough & Cold?</h3>
+              <p class="text-sm text-gray-500">₹399</p>
+              <a href="#" class="text-[#14BEF0] inline-block font-semibold mt-2">Consult Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="swiper-slide">
+          <div class="bg-white rounded-2xl shadow-md overflow-hidden w-60 mx-auto cursor-pointer hover:shadow-lg transition">
+            <img src="{% static 'images/stomach-issues-v1.jpg' %}" class="w-full h-40 object-cover" />
+            <div class="p-4">
+              <h3 class="text-gray-800 text-lg font-semibold">Stomach issues?</h3>
+              <p class="text-sm text-gray-500">₹499</p>
+              <a href="#" class="text-[#14BEF0] inline-block font-semibold mt-2">Consult Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="swiper-slide">
+          <div class="bg-white rounded-2xl shadow-md overflow-hidden w-60 mx-auto cursor-pointer hover:shadow-lg transition">
+            <img src="{% static 'images/skin-problems-v1.jpg' %}" class="w-full h-40 object-cover" />
+            <div class="p-4">
+              <h3 class="text-gray-800 text-lg font-semibold">Skin problems?</h3>
+              <p class="text-sm text-gray-500">₹499</p>
+              <a href="#" class="text-[#14BEF0] inline-block font-semibold mt-2">Consult Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="swiper-slide">
+          <div class="bg-white rounded-2xl shadow-md overflow-hidden w-60 mx-auto cursor-pointer hover:shadow-lg transition">
+            <img src="{% static 'images/sick-kid-v1.jpg' %}" class="w-full h-40 object-cover" />
+            <div class="p-4">
+              <h3 class="text-gray-800 text-lg font-semibold">Sick kid?</h3>
+              <p class="text-sm text-gray-500">₹499</p>
+              <a href="#" class="text-[#14BEF0] inline-block font-semibold mt-2">Consult Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="swiper-slide">
+          <div class="bg-white rounded-2xl shadow-md overflow-hidden w-60 mx-auto cursor-pointer hover:shadow-lg transition">
+
+            <img src="{% static 'images/sick-kid-v1.jpg' %}"
+                 class="w-full h-40 object-cover" />
+
+            <div class="p-4">
+              <h3 class="text-gray-800 text-lg font-semibold">Sick kid?</h3>
+              <p class="text-sm text-gray-500">₹499</p>
+              <a href="#" class="text-[#14BEF0] mt-2 inline-block font-semibold">
+                Consult Now →
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- CARD 5 -->
+        <div class="swiper-slide">
+          <div class="bg-white rounded-2xl shadow-md overflow-hidden w-60 mx-auto cursor-pointer hover:shadow-lg transition">
+
+            <img src="{% static 'images/period-problems-v1.jpg' %}"
+                 class="w-full h-40 object-cover" />
+
+            <div class="p-4">
+              <h3 class="text-gray-800 text-lg font-semibold">Period problems?</h3>
+              <p class="text-sm text-gray-500">₹499</p>
+              <a href="#" class="text-[#14BEF0] mt-2 inline-block font-semibold">
+                Consult Now →
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- CARD 6 -->
+        <div class="swiper-slide">
+          <div class="bg-white rounded-2xl shadow-md overflow-hidden w-60 mx-auto cursor-pointer hover:shadow-lg transition">
+
+            <img src="{% static 'images/performance-issues-bed-v1.jpg' %}"
+                 class="w-full h-40 object-cover" />
+
+            <div class="p-4">
+              <h3 class="text-gray-800 text-lg font-semibold">Performance issues in bed?</h3>
+              <p class="text-sm text-gray-500">₹499</p>
+              <a href="#" class="text-[#14BEF0] mt-2 inline-block font-semibold">
+                Consult Now →
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- CARD 7 -->
+        <div class="swiper-slide">
+          <div class="bg-white rounded-2xl shadow-md overflow-hidden w-60 mx-auto cursor-pointer hover:shadow-lg transition">
+
+            <img src="{% static 'images/lose-weight-v1.jpg' %}"
+                 class="w-full h-40 object-cover" />
+
+            <div class="p-4">
+              <h3 class="text-gray-800 text-lg font-semibold">Want to lose weight?</h3>
+              <p class="text-sm text-gray-500">₹549</p>
+              <a href="#" class="text-[#14BEF0] mt-2 inline-block font-semibold">
+                Consult Now →
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- CARD 8 -->
+        <div class="swiper-slide">
+          <div class="bg-white rounded-2xl shadow-md overflow-hidden w-60 mx-auto cursor-pointer hover:shadow-lg transition">
+
+            <img src="{% static 'images/depression-anxiety-v1.jpg' %}"
+                 class="w-full h-40 object-cover" />
+
+            <div class="p-4">
+              <h3 class="text-gray-800 text-lg font-semibold">Depression anxiety?</h3>
+              <p class="text-sm text-gray-500">₹499</p>
+              <a href="#" class="text-[#14BEF0] mt-2 inline-block font-semibold">
+                Consult Now →
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- CARD 9 -->
+        <div class="swiper-slide">
+          <div class="bg-white rounded-2xl shadow-md overflow-hidden w-60 mx-auto cursor-pointer hover:shadow-lg transition">
+
+            <img src="{% static 'images/vaginal-infections-v1.jpg' %}"
+                 class="w-full h-40 object-cover" />
+
+            <div class="p-4">
+              <h3 class="text-gray-800 text-lg font-semibold">Vaginal infections?</h3>
+              <p class="text-sm text-gray-500">₹499</p>
+              <a href="#" class="text-[#14BEF0] mt-2 inline-block font-semibold">
+                Consult Now →
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+{% block js %}
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="{% static 'js/video_consult.js' %}"></script>
+
+<!-- Initialize Swiper -->
+
+{% endblock js %}
 {% endblock content %}

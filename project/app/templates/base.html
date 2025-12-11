@@ -23,13 +23,13 @@
 
           <!-- Desktop Menu -->
           <div class="hidden md:flex items-center space-x-6">
-            <a href="{% url 'find_doctor' %}" class="hover:text-blue-600 {% if request.resolver_match.url_name == 'find_doctor' %}text-blue-600 font-semibold{% endif %}">
+            <a href="{% url 'find_doctor' %}" class="{% if request.resolver_match.url_name == 'find_doctor' %}text-blue-900 font-semibold border-b-4 border-[#14BEF0]{% endif %}">
               Find Doctors
             </a>
-            <a href="{% url 'video_consult' %}" class="hover:text-blue-600 {% if request.resolver_match.url_name == 'video_consult' %}text-blue-600 font-semibold{% endif %}">
+            <a href="{% url 'video_consult' %}" class=" {% if request.resolver_match.url_name == 'video_consult' %}text-blue-900 font-semibold border-b-4 border-[#14BEF0]{% endif %}">
               Video Consult
             </a>
-            <a href="{% url 'surgeries' %}" class="hover:text-blue-600 {% if request.resolver_match.url_name == 'surgeries' %}text-blue-600 font-semibold{% endif %}">
+            <a href="{% url 'surgeries' %}" class=" {% if request.resolver_match.url_name == 'surgeries' %}text-blue-900 font-semibold border-b-4 border-[#14BEF0]{% endif %}">
               Surgeries
             </a>
           </div>
@@ -38,11 +38,11 @@
           <div class="hidden md:flex items-center space-x-6">
             <!-- For Corporates -->
             <div class="relative group">
-              <button class="flex items-center space-x-1 hover:text-blue-600">
+              <button class="flex items-center ">
                 <span>For Corporates</span>
                 <i class="fa-solid fa-chevron-down text-sm"></i>
               </button>
-              <div class="absolute hidden group-hover:block bg-white shadow-md rounded-lg mt-2 py-2 w-56">
+              <div class="absolute z-1 hidden group-hover:block bg-white shadow-md rounded-lg mt-2 py-2 w-56">
                 <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Health & Wellness Plans</a>
                 <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Group Insurance</a>
               </div>
@@ -50,11 +50,11 @@
 
             <!-- For Providers -->
             <div class="relative group">
-              <button class="flex items-center space-x-1 hover:text-blue-600">
+              <button class="flex items-center ">
                 <span>For Providers</span>
                 <i class="fa-solid fa-chevron-down text-sm"></i>
               </button>
-              <div class="absolute hidden group-hover:block bg-white shadow-md rounded-lg mt-2 py-2 w-56">
+              <div class="absolute z-1 hidden group-hover:block bg-white shadow-md rounded-lg mt-2 py-2 w-56">
                 <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Practo Prime</a>
                 <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Software for Providers</a>
                 <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">List your practice for Free</a>
@@ -64,11 +64,11 @@
 
             <!-- Security & Help -->
             <div class="relative group">
-              <button class="flex items-center space-x-1 hover:text-blue-600">
+              <button class="flex items-center ">
                 <span>Security & Helps</span>
                 <i class="fa-solid fa-chevron-down text-sm"></i>
               </button>
-              <div class="absolute hidden group-hover:block bg-white shadow-md rounded-lg mt-2 py-2 w-56">
+              <div class="absolute z-1 hidden group-hover:block bg-white shadow-md rounded-lg mt-2 py-2 w-56">
                 <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Data Security</a>
                 <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Help</a>
               </div>
@@ -91,13 +91,13 @@
       <!-- Mobile Menu -->
       <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-inner">
         <div class="px-4 py-3 space-y-2">
-          <a href="{% url 'find_doctor' %}" class="block hover:text-blue-600">Find Doctor</a>
-          <a href="{% url 'video_consult' %}" class="block hover:text-blue-600">Video Consult</a>
-          <a href="{% url 'surgeries' %}" class="block hover:text-blue-600">Surgeries</a>
-          <a href="#" class="block hover:text-blue-600">For Corporates</a>
-          <a href="#" class="block hover:text-blue-600">For Providers</a>
-          <a href="#" class="block hover:text-blue-600">Security & Helps</a>
-          <a href="{% url 'login' %}" class="block border border-blue-600 text-blue-600 px-4 py-2 rounded-lg text-center hover:bg-blue-600 hover:text-white transition">
+          <a href="{% url 'find_doctor' %}" class="block ">Find Doctor</a>
+          <a href="{% url 'video_consult' %}" class="block ">Video Consult</a>
+          <a href="{% url 'surgeries' %}" class="block ">Surgeries</a>
+          <a href="#" class="block ">For Corporates</a>
+          <a href="#" class="block "> Providers</a>
+          <a href="#" class="block ">Security & Helps</a>
+          <a href="{% url 'login' %}" class="block border hover:border-blue-600 text-blue-600 px-4 py-1.5 rounded-lg text-center transition">
             Login/Signup
           </a>
         </div>

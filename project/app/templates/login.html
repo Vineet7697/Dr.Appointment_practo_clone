@@ -19,8 +19,8 @@
     </div>
 
     <!-- Login Form -->
-    <form class="bg-white p-8 shadow-lg rounded-xl w-96 space-y-6 border border-gray-200">
-
+    <form method="post" class="bg-white p-8 shadow-lg rounded-xl w-96 space-y-6 border border-gray-200">
+    {% csrf_token %}
         <!-- Email / Mobile -->
         <div>
             <label for="email" class="block text-sm font-semibold mb-1 text-gray-700">
@@ -30,7 +30,7 @@
                 type="text"
                 id="email"
                 name="email"
-                class="w-full border border-gray-300 px-4 py-2 rounded text-sm focus:outline-none focus:border-[#14BEF0] focus:ring-1 focus:ring-[#14BEF0]"
+                class="w-full border border-gray-300 px-4 py-2 rounded text-sm focus:outline-none focus:border-[#14BEF0] "
                 placeholder="Mobile Number / Email ID"
                 required
             >
@@ -45,7 +45,7 @@
                 type="password"
                 id="password"
                 name="password"
-                class="w-full border border-gray-300 px-4 py-2 rounded text-sm focus:outline-none focus:border-[#14BEF0] focus:ring-1 focus:ring-[#14BEF0]"
+                class="w-full border border-gray-300 px-4 py-2 rounded text-sm focus:outline-none focus:border-[#14BEF0] "
                 placeholder="Password"
                 required
             >

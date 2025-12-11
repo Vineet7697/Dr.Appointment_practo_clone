@@ -19,8 +19,8 @@
     </div>
 
     <!-- Login Form -->
-    <form class="bg-white p-8 shadow-xl rounded-md w-[420px] space-y-6 border border-gray-200">
-
+    <form class="bg-white p-8 shadow-xl rounded-md w-[420px] space-y-6 border border-gray-200" method="post">
+        {% csrf_token %}
          <div class=" flex justify-between items-center">
             <h2 class="text-xl font-semibold text-gray-700">Join Practo</h2>
             <p class="text-sm text-gray-500">
@@ -43,6 +43,16 @@
                 required
             >
         </div>
+        <div>
+            <label class="block text-sm font-semibold mb-1 text-gray-600">Full Name</label>
+            <input 
+                type="email" 
+                name="email"
+                class="w-full border  border-gray-300 px-4 py-2 rounded text-sm focus:outline-none focus:border-[#14BEF0]"
+                placeholder="Email"
+                required
+            >
+        </div>
 
         <!-- Mobile Number -->
         <div>
@@ -50,6 +60,7 @@
             
             <div class="flex gap-3">
                 <select
+                    name="country_code"
                     class="border border-gray-300 px-2 py-2 rounded text-sm focus:outline-none focus:border-[#14BEF0]"
                     required
                 >
@@ -62,6 +73,7 @@
 
                 <input 
                     type="tel"
+                    name="mobile"
                     class="w-full border border-gray-300 px-4 py-2 rounded text-sm focus:outline-none focus:border-[#14BEF0]"
                     placeholder="Mobile Number"
                     required
@@ -79,9 +91,18 @@
                 required
             >
         </div>
+        <!-- <div>
+            <label class="block text-sm font-semibold mb-1 text-gray-600">Create Password</label>
+            <input 
+                type="password"
+                class="w-full border border-gray-300 px-4 py-2 rounded text-sm  focus:outline-none  focus:border-[#14BEF0]"
+                placeholder="Confirm Password"
+                required
+            >
+        </div> -->
         <!-- Checkbox -->
         <div class="flex items-start gap-2 text-sm leading-5">
-            <input type="checkbox" class="mt-1">
+            <input type="checkbox" name="receive_offers" class="mt-1">
             <p>Receive relevant offers and promotional communication from Practo.By signing up, I agree to
             <span class="text-blue-600 font-medium cursor-pointer hover:underline">
             terms.
@@ -92,9 +113,10 @@
         <!-- Send Otp Button -->
         <button
             type="submit"
+           
             class="w-full bg-[#14BEF0]  text-white py-2 rounded font-semibold  cursor-pointer"
         >
-            Send OTP
+            Register
         </button>
         
     </form>
